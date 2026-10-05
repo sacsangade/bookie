@@ -1,0 +1,17 @@
+<div class="logo"><a routerLink="/"><span class="icon"><img src="./images/logo-icon.svg" alt="logo"/></span><span class="text"><img src="./images/logo-text.svg" alt="logo"/></span></a></div>
+<nav>
+  <ul> 
+	<li><a routerLink="/dashboard" routerLinkActive="active"><fa-icon [icon]="faHouseRegular" /><span class="name">Home</span></a></li>
+	<li>
+		<a href="#" [ngClass]="isBookingActive()? 'active':'collapsed'" data-bs-toggle="collapse" data-bs-target="#collapseBooking" aria-expanded="false" aria-controls="collapseBooking"><span><fa-icon [icon]="faCalendarRegular" /><span class="name">Booking</span></span> <fa-icon [icon]="faCaretDownSolid" /></a>
+	    <ul [ngClass]="isBookingActive()? 'show':''" class="collapse" id="collapseBooking">
+			<li><a href="#">Dashboard</a></li>
+			<li><a routerLink="/booking/categories" routerLinkActive="active" >Categories</a></li>
+			<li><a href="#">Employee</a></li>
+			<li><a href="#">Settings</a></li>
+		</ul>
+	</li>
+	<li><a routerLink="/about" routerLinkActive="active"><fa-icon [icon]="faHeartRegular" /> <span class="name">About</span></a></li>
+	<li><a routerLink="/contact" routerLinkActive="active"><fa-icon [icon]="faAddressCardRegular" /><span class="name">Contact</span></a></li>
+  </ul>
+</nav>

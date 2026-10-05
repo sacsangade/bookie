@@ -1,1 +1,460 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	font-family: "DM Sans", sans-serif;
+	font-weight: 400;
+    font-style: normal;
+	background:#f9f9f9;
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	text-decoration:none;
+}
+.sidebar {
+	width:320px;
+	position:fixed;
+	top:0px;
+	bottom:0px;
+	margin-left:0px;
+}
+.sidebar .logo {
+	padding: 33px 48px;
+}
+.sidebar .logo a {
+	display:flex;
+	gap:10px;
+	align-items: center;
+    justify-content: center;
+}
+.sidebar nav ul {
+	padding:0px;
+	margin: 60px 0 0 0;
+	list-style:none;
+}
+.sidebar nav ul li a{
+	display:flex;
+	font-size:16px;
+	color:#000000;
+	padding:8px 48px;
+	flex-direction:row;
+	gap:12px;
+	align-items:center;
+	transition: font-weight 0.3s ease; 
+}
+.sidebar nav ul li a:hover {
+	font-weight:900;
+}
+.sidebar nav ul li a.active {
+	font-weight:900;
+}
+.sidebar nav ul li a span {
+   flex-grow:1;
+   gap:12px;
+   display: flex;
+   align-items: center;
+}
+.sidebar nav ul li a .fa-caret-down {
+	transition: all 0.2s;
+}
+.sidebar nav ul li a.collapsed .fa-caret-down
+{
+    transform: rotate(-90deg);
+	transition: all 0.2s;
+}
+.sidebar nav ul li ul {
+	margin:0px;
+	padding:0 0 0 30px;
+	
+}
+.sidebar nav ul li ul li a {
+	font-size:14px;
+} 
+.sidebar nav ul li ul li a:before{
+	content:"";
+	position:relative;
+	width:5px;
+	height:5px;
+	background:#000;
+	border-radius:100%;
+}
+.sidebar.close .text,
+.sidebar.close .name,
+.sidebar.close .fa-caret-down,
+.sidebar.close nav ul li ul {
+    display:none;
+}
+.sidebar.close {
+    width: 125px;
+}
+.content.wide {
+	margin-left:125px;
+}
+.content {
+	margin-left:320px;
+	display:flex;
+	flex-direction: column;
+	transition: all 0.3s;
+}
+.content main {
+	flex-grow:1;
+	height:100vh;
+	background:#FFF;
+	padding:60px 48px;
+}
+.content main .title {
+	font-size:20px;
+	font-weight:900;
+	display:flex;
+	gap:12px;
+	align-items:center;
+	margin-bottom:20px;
+}
+.content main .title span {
+	font-size:10px;
+	display:flex;
+	border:1px solid #000;
+	border-radius:100%;
+	width:20px;
+	height:20px;
+	align-items:center;
+	justify-content:center;
+	transition: all 0.3s ease; 
+}
+.content main .title span a {
+	color:#000;
+}
+.content main .title span:hover {
+	background:#000;
+	color:#FFF;
+}
+.content main .title span:hover a{
+	color:#FFF;
+}
+.content header {
+	display: flex;
+    height: 90px;
+    background: #FFFFFF;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding: 0 48px;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+.content header .menu {
+	flex-grow:1;
+	cursor:pointer;
+}
+.content header .menu:hover {
+	opacity:0.5;
+}
+.content header .userinfo {
+	display:flex;
+	gap:12px;
+}
+.content header .userinfo .userdetail {
+	text-align:right;
+}
+.content header .userinfo .userdetail .name{
+	font-size:14px;
+	font-weight:900;
+}
+.content header .userinfo .userdetail .role{
+	font-size:12px;
+}
+.content header .userinfo .usershortname {
+	width:40px;
+	height:40px;
+	background:#000;
+	border-radius:6px;
+	font-size:16px;
+	font-weight:900;
+	color:#FFF;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.content footer {
+	display: flex;
+    height: 90px;
+    background: #FFFFFF;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 0 48px;
+    align-items: center;
+    border-top: 1px solid #000;
+}
+.content footer .copyright {
+	flex-grow:1;
+	font-size:16px;
+}
+.content footer .version {
+	font-size:13px;
+}
+form {
+	width:50%;
+}
+form .form-label,
+form .form-control {
+	font-size:14px;
+	color:#000000;
+}
+
+form .btn-primary {
+	background:#000000;
+	font-size:14px;
+	font-weight:900;
+	border-radius:4px;
+	border:1px solid #000;
+	padding:10px 20px;
+	transition: all 0.3s;
+}
+form .btn-primary:hover {
+	background:#FFFFFF;
+	border:1px solid #000;
+    color:#000000;
+}
+.sp-table .sp-head {
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	padding:16px 0px;
+	font-size:16px;
+	font-weight:900;
+	display:flex;
+	gap:0px;
+}
+
+.sp-table .sp-head .sp-th:first-child {
+	width:300px;
+}
+.sp-table .sp-body .sp-row{
+	display:flex;
+	gap:0px;
+	padding: 16px 0;
+	border-bottom:1px solid #CCC;
+}
+.sp-table .sp-body .sp-row .sp-td:first-child {
+	width:300px;
+}
+.sp-table .sp-body .sp-row .sp-td:last-child {
+	flex-grow:1;
+	display:flex;
+	justify-content:end;
+	gap:8px;
+}
+.sp-table .sp-body .sp-row .sp-td .edit {
+	color:green;
+}
+.sp-table .sp-body .sp-row .sp-td .delet {
+	color:red;
+}
+
+
+@media (max-width: 1399.98px) {
+	.sidebar .logo {
+		padding: 26px 30px;
+    }
+	.sidebar .logo .text img {
+		width:80px;
+	}
+	.sidebar .logo .icon img {
+		width:13px;
+	}
+	.sidebar nav ul li a {
+		font-size: 14px;
+		padding: 6px 30px;
+	}
+	.sidebar.close {
+		width: 80px;
+	}
+	.content.wide {
+		margin-left:80px;
+	}
+	.content header {
+		height: 70px;
+		border-top-left-radius:30px;
+		border-top-right-radius:30px;
+		padding:0px 30px;
+	}
+	.content main {
+		padding: 40px 30px;
+    }
+	.content footer {
+		height: 70px;
+		border-bottom-left-radius:30px;
+		border-bottom-right-radius:30px;
+		padding:0px 30px;
+	}
+	.content footer .copyright {
+		font-size: 14px;
+	}
+	.sidebar {
+		width: 250px;
+	}
+	.content {
+		margin-left: 250px;
+	}
+	.content main .title {
+		font-size: 16px;
+	}
+	.sp-table .sp-head, 
+	.sp-table .sp-row{
+		font-size: 14px;
+	}
+	
+}
+
+/*  xl applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+	.sidebar {
+		width: 220px;
+	}
+	.sidebar .logo {
+		padding: 18px 24px;
+    }
+	.sidebar .logo .text img {
+		width:60px;
+	}
+	.sidebar .logo .icon img {
+		width:9px;
+	}
+	.sidebar nav ul {
+		margin: 40px 0 0 0;
+	}
+	.sidebar nav ul li a {
+		font-size:14px;
+	}
+	.sidebar nav ul li ul li a {
+		font-size: 12px;
+	}
+	.sidebar nav ul li a {
+		padding: 6px 24px;
+	}
+	.sidebar nav ul li a .fa-caret-down {
+		font-size: 12px;
+		margin-top: -5px;
+	}
+	.sidebar.close {
+        width: 66px;
+    }
+	.content.wide {
+		margin-left:66px;
+	}
+	.content {
+		margin-left: 220px;
+	}
+	
+	.content header .userinfo .usershortname {
+		width: 32px;
+		height: 32px;
+	}
+	.content header .userinfo .userdetail .role {
+		font-size: 10px;
+	}
+	.content header .userinfo .userdetail .name {
+		font-size: 12px;
+	}
+	.content header .menu {
+		font-size: 14px;
+    }
+	.content header {
+		height: 60px;
+		border-top-left-radius: 24px;
+		border-top-right-radius: 24px;
+		padding: 0 24px;
+	}
+	.content main {
+		padding: 40px 24px;
+	}
+	.content main .title {
+		font-size: 16px;
+	}
+	
+	.content main .title span {
+		font-size: 10px;
+		width: 18px;
+		height: 18px;	
+	}
+
+	.content footer {
+		height: 60px;
+		border-bottom-left-radius: 24px;
+		border-bottom-right-radius: 24px;
+		padding: 0 24px;
+	}
+	.content footer .copyright {
+		font-size: 14px;
+	}
+	.content footer .version {
+		font-size: 12px;
+	}
+	.sp-table .sp-head {
+		font-size: 13px;
+        padding: 12px 0px;
+    }
+	.sp-table .sp-body .sp-row {
+		font-size: 13px;
+        padding: 12px 0px;
+	}
+	form .form-label, form .form-control {
+		font-size: 12px;
+		color: #000000;
+	}
+	form .btn-primary {
+		font-size: 12px;
+		padding: 8px 20px
+	}
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+	.sidebar {
+		display:none;
+	}
+	.sidebar.close {
+		display:block;
+		width:220px;
+	}
+	.sidebar.close .text, .sidebar.close .name, .sidebar.close .fa-caret-down, .sidebar.close nav ul li ul {
+		display: block;
+	}
+	.content{
+		margin-left:0px;
+	}
+	.content.wide{
+		margin-left:220px;
+		width: 100%;
+	}
+	.sp-table .sp-body .sp-row .sp-td:first-child,
+    .sp-table .sp-head .sp-th:first-child 
+	{
+		width: 100px;
+	}
+	.content header {
+		height: 60px;
+		border-top-left-radius: 24px;
+		border-top-right-radius: 24px;
+		padding: 0 24px;
+	}
+	.content footer {
+		height: 60px;
+		border-bottom-left-radius: 24px;
+		border-bottom-right-radius: 24px;
+		padding: 0 24px;
+	}
+	.collapse:not(.show) {
+		display: none !important;
+	}
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+	body{
+		overflow-x:hidden;
+	}
+	form {
+		width: 100%;
+    }
+	.content.wide{
+		width: 100%;
+	}
+}
