@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from '../../parts/header/header';
 import { Footer } from '../../parts/footer/footer';
 import { Sidebar } from '../../parts/sidebar/sidebar';
-
+//Menu Toggle Service Call 
 import { MenuToggle } from '../../../services/menu-toggle';
 
 @Component({
@@ -13,6 +13,9 @@ import { MenuToggle } from '../../../services/menu-toggle';
   styleUrl: './sidebar-verticle.css',
   templateUrl: './sidebar-verticle.html',
 })
-export class SidebarVerticle {
-   protected menuToggle = inject(MenuToggle);
+
+export class SidebarVerticle  {
+   
+  protected menuToggle = inject(MenuToggle);
+   
 }

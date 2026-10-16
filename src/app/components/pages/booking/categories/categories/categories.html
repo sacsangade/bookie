@@ -1,0 +1,24 @@
+<h3 class="title">All Categories <span><a routerLink="/booking/add-category"><fa-icon [icon]="faPlus" /></a></span></h3>
+@if (posts().length > 0) {
+<div class="sp-table">
+	<div class="sp-head">
+		<div class="sp-th">Name</div>
+		<div class="sp-th">Description</div>
+	</div>
+	<div class="sp-body">
+        @for (post of posts(); track post.categoryid) {
+            <div class="sp-row">
+				<div class="sp-td">{{post.categorytitle}}</div>
+				<div class="sp-td">{{post.categorydescription}}</div>
+				<div class="sp-td"><a [routerLink]="['/booking/edit-category/', post.categoryid]" class="edit"><fa-icon [icon]="faPen" /></a><a class="delete" (click)="showDeleteAlert(post.categoryid)"><fa-icon [icon]="faCircleXmark" /></a></div>
+			</div>
+        }
+    </div>
+</div>
+} @else {
+    <div class="sp-table">
+	    <div class="sp-head">
+			<div class="sp-th">No any post available</div>
+		</div>
+    </div>
+}             

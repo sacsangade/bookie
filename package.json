@@ -24,9 +24,13 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/free-regular-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@sweetalert2/ngx-sweetalert2": "^15.0.0",
+    "cors": "^2.8.6",
     "express": "^5.1.0",
+    "ng-hub-ui-toast": "^22.12.1",
     "ngx-bootstrap": "^22.0.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.26.25",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

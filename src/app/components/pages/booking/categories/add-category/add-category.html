@@ -1,0 +1,20 @@
+<h3 class="title">Add Category</h3>
+ <form [formRoot]="bookingCategoryForm" class="needs-validation" [ngClass]="bookingCategoryForm.title().touched()  ? 'was-validated' : ''" novalidate>
+		<div class="mb-3">
+			<label for="sp-category-title" class="form-label">Title</label>
+			<input type="text" class="form-control" id="sp-category-title" [formField]="bookingCategoryForm.title">
+			@if(bookingCategoryForm.title().touched() && bookingCategoryForm.title().invalid()){
+                @for (error of bookingCategoryForm.title().errors(); track error) {
+					<div class="invalid-feedback">{{ error.message }}</div>
+				}
+			}
+		</div>
+		<div class="mb-3">
+			<label for="sp-category-Description" class="form-label">Description</label>
+			<textarea class="form-control" id="sp-category-Description" rows="3" [formField]="bookingCategoryForm.description"></textarea>
+		</div>
+		 <div class="pt-3">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+   </form>
+   

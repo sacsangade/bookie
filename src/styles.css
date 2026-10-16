@@ -244,8 +244,9 @@ form .btn-primary:hover {
 .sp-table .sp-body .sp-row .sp-td .edit {
 	color:green;
 }
-.sp-table .sp-body .sp-row .sp-td .delet {
+.sp-table .sp-body .sp-row .sp-td .delete {
 	color:red;
+	cursor: pointer;
 }
 
 

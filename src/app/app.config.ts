@@ -2,10 +2,16 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideSweetAlert2 } from '@sweetalert2/ngx-sweetalert2';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration()
+    provideRouter(routes), provideClientHydration(),
+    provideSweetAlert2({
+      // Optional configuration
+      fireOnInit: false,
+      dismissOnDestroy: true,
+    }),
   ]
 };
